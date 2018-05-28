@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<title> D3 practise examples </title>
+<script src="https://d3js.org/d3.v3.min.js"> </script>
+</head>
+
+<body>
+
+
+
+
+<script>
+ var a = [
+		6,16,42,29,39,9];
+		
+	
+ 
+ var visualization = d3.select("body")               // definition of visualization variable
+						.append("svg")
+						.attr("width",1000)
+						.attr("height",1000);
+						
+ var bar_graph = 	visualization.selectAll("rect")
+								.data(a)
+								.enter()           //contains placeholders for each and every data element
+								.append("rect")    // since we want to append rectangle for each data element
+								.attr("height",function(d) { return d*10; } )   
+								.attr("width",70) // height of each bar is 50 pixels
+						.attr("x", function(d,i){return i*100})
+						    .attr("y", function(d, i) {return 600 - (d * 10)})      //Browsers generally read web pages from top left to bottom right, while we read bar charts from bottom to top. To reposition the rectangles, we’ll modify the y attribute to subtract the space on top.
+                                                                                                // Again, we’ll use function(d, i), and we’ll return a Y value that is taller than our bar chart’s tallest value, let’s say 400. We’ll subtract the returned height of (d * 10) from 400
+				
+				.attr("fill", "orange")															
+				.attr("stroke", "grey")
+							.attr("stroke-width", 5);
+							
+						
+							
+	var bar_text =	visualization.selectAll("text")
+    .data(a)
+    .enter()
+	.append("text")
+    .text(function(d) {return d})
+          .attr("x", function(d, i) {return (i * 110)})
+          .attr("y", function(d, i) {return 620 - (d * 10)});
+		  
+		  
+		  
+		
+		  
+		  							
+</script>
+
+</body>
+</html>
