@@ -4,7 +4,8 @@ Supermarkets
 Hypermarkets
 <html>
 <div id="chartContainer">
-  <script src="/lib/d3.v4.3.0.js"></script>
+  <script src="https://d3js.org/d3.v5.js"></script>
+  <script src="https://d3js.org/d3.v3.min.js"> </script>
   <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
   <script type="text/javascript">
     var svg = dimple.newSvg("#chartContainer", 590, 400);
